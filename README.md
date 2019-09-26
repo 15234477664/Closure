@@ -19,22 +19,13 @@ var n=999;
 
 　　f1(); // 999
 ```
-## 使用
+## 另一方面，在函数外部自然无法读取函数内的局部变量。
 ```JS
-//ES6引入
-import vueUploadWeb from 'vue-upload-web'
-//require引入
-var vueUploadWeb = require('VueUploadWeb')
+function f1(){
+　　　　var n=999;
+　　}
 
-Vue.use(vueUploadWeb)
-
-在入口index.html中添加
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-
-//组件中使用
-<vue-upload-web></vue-upload-web>
-
-IE9及以下版本使用的为flash,所以上传服务器地址不应使用https,应该使用http
+　　alert(n); // error
 ```
 
 ## 配置
