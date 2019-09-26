@@ -28,13 +28,16 @@ function f1(){
 　　alert(n); // error
 ```
 
-## 配置
+## 这里有一个地方需要注意，函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！
 
 ```html
-<vue-upload-web ref="upload" :url="cdnUrl" :form-data="cdnParams" :accept="accept" :key-generator="keyGenerator"
-                            @progress="uploadProgress" @success="handleSuccess" @before="beforeUpload"
-                            @error="error" @complete="handleComplete" upload-button=".btns" :multiple=true>
-</vue-upload-web>
+function f1(){
+　　　　n=999;
+　　}
+
+　　f1();
+
+　　alert(n); // 999
 ```
 
 ## 刷新调用refresh
